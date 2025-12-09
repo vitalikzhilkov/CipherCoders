@@ -1,0 +1,234 @@
+﻿/* Общие сбросы и шрифты */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #f0f8ff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Хедер и навигация */
+.header {
+  background: #0098c9;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-left a, .nav-right a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Основной контент */
+main {
+  flex: 1; /* занимает всё свободное пространство */
+  padding: 30px 20px;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+  color: #023e8a;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* Списки */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+ul li::before {
+  content: "💧";
+  position: absolute;
+  left: 0;
+}
+
+/* Кнопки */
+button {
+  cursor: pointer;
+  background: #00b4d8;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0096c7;
+}
+
+/* Формы */
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Футер */
+.footer {
+  background: #023e8a;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto; /* важно для прилипания футера к низу */
+}
+
+/* Всплывающее окно персонажа */
+.character-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #90e0ef;
+  border-radius: 12px;
+  padding: 15px;
+  display: none;
+  max-width: 250px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  transition: 0.4s;
+}
+
+.character-popup.show {
+  display: block;
+}
+
+.character {
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.speech-box {
+  overflow: hidden;
+}
+
+.speech-box p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.btn-row button {
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .nav-left, .nav-right {
+    flex-basis: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .character-popup {
+    bottom: 10px;
+    right: 10px;
+    max-width: 200px;
+  }
+}
+/* support */
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #00b4d8;
+}
+
+.faq-question {
+  background: #00b4d8;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #0096c7;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background: #caf0f8;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-answer.show {
+  padding: 10px 15px;
+  max-height: 200px; /* можно увеличить, если текст длиннее */
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
