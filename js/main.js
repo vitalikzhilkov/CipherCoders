@@ -18,7 +18,7 @@
       e.preventDefault();
       const fd = new FormData(vipForm);
       try {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbxqNxU-QpYR-WBeHZsA34JOH2uWWIyz866pPiFN4ROj2NVc3nj0zZvZ3TNkTA4341-Ytg/exec", {method:"POST", body:fd});
+        const res = await fetch("https://script.google.com/macros/s/AKfycbxYBgDwdVWAuMu8YQT0thShZ8UTpSyiA80z_8wuKmBID0Gzg-9HClq6aERgSPbBjNnI4Q/exec", {method:"POST", body:fd});
         status.textContent = res.ok ? "Заявка отправлена!" : "Ошибка отправки.";
       } catch {
         status.textContent = "Ошибка соединения.";
